@@ -45,9 +45,9 @@ data_choice = st.sidebar.radio("Select Data Source:", ["Balaji Fast Food Sales",
 def load_and_clean(choice):
     try:
         if choice == "Balaji Fast Food Sales":
-            df = pd.read_csv(r"C:\Users\Mega Store\Downloads\Balaji Fast Food Sales.csv")
+            df = pd.read_csv("Balaji Fast Food Sales.csv")
         else:
-            df = pd.read_excel(r"C:\Users\Mega Store\Downloads\9. Sales-Data-Analysis.csv.xlsx")
+            df = pd.read_excel("9. Sales-Data-Analysis.csv.xlsx")
             df.columns = [col.strip() for col in df.columns]
             if 'Price per unit' in df.columns and 'Quantity' in df.columns:
                 df['Sales'] = df['Price per unit'] * df['Quantity']
